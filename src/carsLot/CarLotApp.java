@@ -53,10 +53,10 @@ public class CarLotApp {
 				option = read.nextLine();
 				switch (option) {
 				case "new":
-					addCar();
+					addCar(cars.size());
 					break;
 				case "used":
-					addUsed();
+					addUsed(cars.size());
 					break;
 				default:
 					System.out.println("Sorry, that input wasn't valid. back to the main menu.");
@@ -71,6 +71,24 @@ public class CarLotApp {
 			case "look":
 			case "4":
 				doSelect();
+				break;
+			case "replace":
+			case "5":
+				list();
+				int place = Vali.getInt(read, "Which number car do you want to replace?");
+				System.out.println("\n\nIs the car you want to add new or used? {\"new\"/\"used\")");
+				option = read.nextLine();
+				switch (option) {
+				case "new":
+					addCar(place);
+					break;
+				case "used":
+					addUsed(place);
+					break;
+				default:
+					System.out.println("Sorry, that input wasn't valid. back to the main menu.");
+					break;
+					}
 				break;
 			case "quit":
 			case "6":
@@ -93,7 +111,7 @@ public class CarLotApp {
 		finished = false;
 	}
 
-	private static void addUsed() {
+	private static void addUsed(int place) {
 		System.out.println("Please enter the make of the car:");
 		String make = read.nextLine();
 		System.out.println("\nNow enter the model of the car:");
@@ -144,18 +162,18 @@ public class CarLotApp {
 		
 		System.out.println("Are you sure you want to create a " + year + " " + make +" "+ model +" for $"+price+" with " + miles + "? (y/n)"); 
 		if (Vali.checkYes(read.nextLine())) {
-			cars.add(new UsedCar(make, model, year, price, miles));
+			cars.add(place, new UsedCar(make, model, year, price, miles));
 		}else {
 			System.out.println("Do you still want to add another car? (y/n)");
 			if (Vali.checkYes(read.nextLine())) {
-				addUsed();
+				addUsed(place);
 			}
 		}
 			finished = false;
 		
 	}
 
-	private static void addCar() {
+	private static void addCar(int place) {
 		System.out.println("Please enter the make of the car:");
 		String make = read.nextLine();
 		System.out.println("\nNow enter the model of the car:");
@@ -192,11 +210,11 @@ public class CarLotApp {
 		} while (!finished);
 		System.out.println("Are you sure you want to create a " + year + " " + make +" "+ model +" for $"+price+"? (y/n)"); 
 		if (Vali.checkYes(read.nextLine())) {
-			cars.add(new Car(make, model, year, price));
+			cars.add(place, new Car(make, model, year, price));
 		}else {
 			System.out.println("Do you still want to add a new car? (y/n)");
 			if (Vali.checkYes(read.nextLine())) {
-				addCar();
+				addCar(place);
 			}
 		}
 			finished = false;

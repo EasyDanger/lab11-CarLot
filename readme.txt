@@ -3,7 +3,7 @@ Task: Make a Car Lot App
 
 Version History
 0.1--10/22/2018--Initial commit, logic written.
-	--preforms all primary tasks
+	--performs all primary tasks
 	----lists all cars
 	----adds cars
 	----removes cars
@@ -18,4 +18,6 @@ Version History
 	--view cars of specific year not implemented
 	--View only new or only used cars not implemented
 	--copy editing
-	
+	--testing
+1.0--10/23/2018
+	--added ability to replace a car on list.
