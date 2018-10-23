@@ -30,3 +30,10 @@ Version History
 	--View only new or only used cars not implemented
 	--copy editing
 	--testing
+1.1--10/23/2018
+	--added ability to search for car by make
+	Known Issues
+	--view cars of specific year not implemented
+	--View only new or only used cars not implemented
+	--testing
+	--unknown change made to UsedCar class. unable to find.

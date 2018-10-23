@@ -27,6 +27,4 @@ public class UsedCar extends Car{
 	public String toString() {
 		return String.format("%-12s%-12s%-12s%-12s%-12s", make, model, year, "$" + price,"(Used) " + miles + " miles");
 	}
-	
-
 }

@@ -55,7 +55,8 @@ public class CarLotApp {
 			System.out.println("3. Remove a Car (\"remove\")");
 			System.out.println("4. Look up a car by index humber (\"look\")");
 			System.out.println("5. Replace a car at a specific index number (\"replace\")");
-			System.out.println("6. Exit this application (\"quit\")");
+			System.out.println("6. List cars only of a specific make (\"make\")");
+			System.out.println("7. Exit this application (\"quit\")");
 			// there are a lot of specific options, so I'm allowed to use a switch again!
 			String option = read.nextLine();
 			switch (option) {
@@ -120,8 +121,13 @@ public class CarLotApp {
 				break;
 			// Our exit condition.
 			case "quit":
-			case "6":
+			case "7":
 				finished = true;
+				break;
+			case "6":
+			case "make":
+				System.out.println("Enter the make you want to search for:");
+				whatMake(read.nextLine());
 				break;
 			default:
 				System.out.println("Sorry, but that choice isn't valid.");
@@ -289,6 +295,16 @@ public class CarLotApp {
 		for (Car car : cars) {
 			i++;
 			System.out.println(i + ". " + car);
+		}
+	}
+//Method to search by car make.
+	private static void whatMake(String make) {
+		System.out.println("\nList of all "+ make.toUpperCase() + " cars");
+		System.out.println("============================");
+		for (Car car: cars) {
+			if (car.getMake().equalsIgnoreCase(make)) {
+				System.out.println(car);
+			}
 		}
 	}
 }
