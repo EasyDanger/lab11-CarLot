@@ -21,3 +21,12 @@ Version History
 	--testing
 1.0--10/23/2018
 	--added ability to replace a car on list.
+	--comments added
+	--bug fixes
+	--code cleanup
+	Known Issues
+	--View cars of certain make not implemented
+	--view cars of specific year not implemented
+	--View only new or only used cars not implemented
+	--copy editing
+	--testing
